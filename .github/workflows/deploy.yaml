@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - prod
+  workflow_dispatch:
 
 jobs:
   release:
@@ -13,3 +14,5 @@ jobs:
       # Bump version on merging Pull Requests with specific labels.
       # (bump:major,bump:minor,bump:patch)
       - uses: haya14busa/action-bumpr@v1
+        with:
+          default_bump_level: minor
